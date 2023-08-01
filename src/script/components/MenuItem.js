@@ -14,7 +14,7 @@ import { findMenuItemByID, updateItem } from '../utils/utils';
 
 //import PropTypes from 'prop-types';
 
-const ITEM_NESTED_INDENT_SIZE = 20;
+const ITEM_NESTED_INDENT_SIZE = 27;
 
 const MenuItem = (props) => {
   const store = useContext(StoreContext);
@@ -158,7 +158,7 @@ const MenuItem = (props) => {
           <div className="mmu-gripper" aria-label="Move up or down"></div>
         </div>
 
-        <div className="mmu-menu-item-rows">
+        <div className={"mmu-menu-item-rows "+(((item.childCount > 0 || item.has_fetchable_children > 0) > 0)?'has-children':'no-children')}>
           {(!item.isNewAddition) ? 
             <div className={"mmu-menu-item-row mmu-menu-item-row--details " + ((item.expanded) ? "mmu-menu-item-row--expanded" : "")} >
             {(item.childCount > 0 || item.has_fetchable_children > 0) ?

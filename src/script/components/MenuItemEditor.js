@@ -140,7 +140,7 @@ const MenuItemEditor = (props) => {
       </Tabs>
       
       <div className="mmu-menu-item-editor-actions mmu-menu-item-editor-actions--secondary">
-        <a onClick={(e) => cancelEdit(e)}>Cancel {item.isNewAddition ? "Add" : "Edit"}</a>
+        <a className="button-secondary" onClick={(e) => cancelEdit(e)}>Cancel {item.isNewAddition ? "Add" : "Edit"}</a>
       </div>
       
 
