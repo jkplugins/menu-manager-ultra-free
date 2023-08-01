@@ -277,7 +277,7 @@ body.appearance_page_menu-manager-ultra .rc-tooltip-content .mmu-menu-item-toolt
 
 .mmu-dashboard {
   margin-right: 20px;
-  padding: 20px;
+  padding: 5px;
   padding-bottom: 80px;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.05), 0 3px 6px rgba(0, 0, 0, 0.1);
   border-radius: 2px;
@@ -295,7 +295,7 @@ body.appearance_page_menu-manager-ultra .rc-tooltip-content .mmu-menu-item-toolt
   justify-items: center;
 }
 .mmu-dashboard .react-tabs__tab {
-  padding: 15px;
+  padding: 10px 15px;
   display: block;
   border: 0;
   min-width: 100px;
@@ -307,27 +307,39 @@ body.appearance_page_menu-manager-ultra .rc-tooltip-content .mmu-menu-item-toolt
   display: inline-block;
   border-radius: 0;
   border-width: 0;
-  background-color: #59a3df;
-  padding-left: 20px;
-  padding-right: 20px;
+  background-color: #ccc;
+  padding-left: 15px;
+  padding-right: 15px;
   padding-top: 10px;
   padding-bottom: 10px;
   margin-right: 5px;
+  text-align: center;
   color: #fff;
   bottom: -7px;
 }
 .mmu-dashboard .react-tabs__tab--selected {
   padding-top: 15px;
-  background-color: #fff;
-  color: inherit;
+  background-color: #2271b1;
+  color: white;
   border-width: 0px;
 }
 .mmu-dashboard .react-tabs__tab-list {
-  background-color: #2271b1;
-  padding-left: 10px;
-  padding-right: 10px;
+  background-color: #e8e8e8;
+  padding-left: 7.5px;
+  padding-right: 2.5px;
   padding-bottom: 0;
-  padding-top: 5px;
+  padding-top: 2.5px;
+  position: relative;
+}
+.mmu-dashboard .react-tabs__tab-list:after {
+  content: "";
+  position: absolute;
+  height: 4px;
+  background: #2271b1;
+  z-index: 1000;
+  bottom: -3px;
+  left: 0;
+  right: 0;
 }
 .mmu-save-bar {
   height: 80px;
@@ -384,25 +396,28 @@ body.appearance_page_menu-manager-ultra .rc-tooltip-content .mmu-menu-item-toolt
   align-items: center;
   justify-items: start;
   border: 0;
-  color: #2271b1;
+  color: #ccc;
   background-color: transparent;
 }
 .mmu-settings-bar {
-  padding: 20px;
+  padding: 5px;
   display: grid;
   grid-template-columns: auto;
   justify-items: end;
 }
 .mmu-menu-item-container {
   background-color: #fff;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.05), 0 3px 6px rgba(0, 0, 0, 0.1);
-  padding-right: 20px;
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1);
+  padding-right: 5px;
+}
+.mmu-menu-item-container:hover {
+  outline: 1px solid #2271b1;
 }
 .mmu-menu-item-container--hidden {
   display: none;
 }
 .mmu-menu-item-container-spacer {
-  height: 30px;
+  height: 10px;
 }
 .mmu-menu-item-container--drag-hover .mmu-droppable-container--nested {
   height: 60px;
@@ -410,14 +425,14 @@ body.appearance_page_menu-manager-ultra .rc-tooltip-content .mmu-menu-item-toolt
 .mmu-menu-item-container .mmu-icon-button--expand-item,
 .mmu-menu-item-container .mmu-icon-button--item-loading {
   margin-right: 10px;
-  font-size: 2.5rem;
+  font-size: 1.5rem;
 }
 .mmu-menu-item-container .mmu-icon-button--item-loading {
   font-size: 1.5rem;
 }
 .mmu-droppable-container {
   padding: 0;
-  height: 30px;
+  height: 10px;
 }
 .mmu-droppable-container--nested {
   height: 10px;
@@ -430,7 +445,7 @@ body.appearance_page_menu-manager-ultra .rc-tooltip-content .mmu-menu-item-toolt
   border-color: #ccc;
 }
 .mmu-droppable-container--after {
-  height: 30px;
+  height: 10px;
   padding-left: 0;
   padding-right: 0;
 }
@@ -455,8 +470,8 @@ body.appearance_page_menu-manager-ultra .rc-tooltip-content .mmu-menu-item-toolt
   width: 100%;
 }
 .mmu-menu-item-row--details {
-  padding-top: 20px;
-  padding-bottom: 20px;
+  padding-top: 5px;
+  padding-bottom: 5px;
 }
 .mmu-menu-item-row--drop-target {
   display: block;
@@ -468,7 +483,6 @@ body.appearance_page_menu-manager-ultra .rc-tooltip-content .mmu-menu-item-toolt
 .mmu-menu-item-title {
   font-size: 1rem;
   line-height: 1.2;
-  font-weight: bold;
 }
 .mmu-menu-item-title--delete {
   text-decoration: line-through;
@@ -482,19 +496,23 @@ body.appearance_page_menu-manager-ultra .rc-tooltip-content .mmu-menu-item-toolt
   padding-left: 10px;
   width: 100%;
 }
+.mmu-menu-item-rows.no-children {
+  padding-left: 40px;
+}
 .mmu-menu-item-meta {
-  margin-bottom: 5px;
+  margin-bottom: 1.25px;
 }
 .mmu-menu-item-url {
   display: inline-block;
+  color: #aaa;
 }
 .mmu-menu-item-drag-handle {
-  margin-left: 5px;
+  margin-left: 9px;
   display: flex;
   justify-content: center;
 }
 .mmu-menu-item-drag-handle .mmu-gripper {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%273%27 height=%273%27%3E%3Crect x=%270%27 y=%270%27 width=%272%27 height=%272%27 fill=%27%23666%27%3E%3C/rect%3E%3Crect x=%272%27 y=%270%27 width=%271%27 height=%272%27 fill=%27transparent%27%3E%3C/rect%3E%3Crect x=%270%27 y=%272%27 width=%273%27 height=%271%27 fill=%27transparent%27%3E%3C/rect%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%273%27 height=%273%27%3E%3Crect x=%270%27 y=%270%27 width=%272%27 height=%272%27 fill=%27%23ccc%27%3E%3C/rect%3E%3Crect x=%272%27 y=%270%27 width=%271%27 height=%272%27 fill=%27transparent%27%3E%3C/rect%3E%3Crect x=%270%27 y=%272%27 width=%273%27 height=%271%27 fill=%27transparent%27%3E%3C/rect%3E%3C/svg%3E");
   background-position: top left;
   width: 11px;
   height: 30px;
@@ -521,8 +539,11 @@ body.appearance_page_menu-manager-ultra .rc-tooltip-content .mmu-menu-item-toolt
   align-items: center;
   justify-items: start;
   border: 0;
-  color: #2271b1;
+  color: #ccc;
   background-color: transparent;
+}
+.mmu-menu-item-actions .mmu-button:hover {
+  color: #2271b1;
 }
 .mmu-menu-item-actions .mmu-button--disabled {
   color: #CCC;
@@ -543,7 +564,7 @@ body.appearance_page_menu-manager-ultra .rc-tooltip-content .mmu-menu-item-toolt
 }
 
 .mmu-button {
-  padding: 15px;
+  padding: 10px 15px;
   display: block;
   border: 0;
   min-width: 100px;
@@ -569,12 +590,12 @@ body.appearance_page_menu-manager-ultra .rc-tooltip-content .mmu-menu-item-toolt
   align-items: center;
   justify-items: start;
   border: 0;
-  color: #2271b1;
+  color: #ccc;
   background-color: transparent;
 }
 .mmu-button--without-background {
   background-color: transparent;
-  color: #2271b1;
+  color: #ccc;
 }
 
 .mmu-icon-button--item-loading {
@@ -587,25 +608,25 @@ body.appearance_page_menu-manager-ultra .rc-tooltip-content .mmu-menu-item-toolt
 .mmu-editor-form-fields {
   display: grid;
   align-content: start;
-  row-gap: 10px;
+  row-gap: 2.5px;
 }
 .mmu-editor-form details {
-  padding: 10px;
+  padding: 2.5px;
   border: 1px solid #CCC;
 }
 .mmu-editor-form details summary {
   cursor: pointer;
 }
 .mmu-editor-form details .mmu-editor-form-fields {
-  margin-top: 10px;
+  margin-top: 2.5px;
 }
 .mmu-editor-field {
   display: grid;
   grid-template-columns: 30% 70%;
   align-items: center;
-  -moz-column-gap: 10px;
-       column-gap: 10px;
-  max-width: calc(100% - 10px);
+  -moz-column-gap: 2.5px;
+       column-gap: 2.5px;
+  max-width: calc(100% - 2.5px);
 }
 .mmu-editor-field input[type=text] {
   width: 100%;
@@ -613,11 +634,11 @@ body.appearance_page_menu-manager-ultra .rc-tooltip-content .mmu-menu-item-toolt
 }
 
 .mmu-menu-item-editor {
-  margin-top: 20px;
+  margin-top: 5px;
   width: 100%;
 }
 .mmu-menu-item-editor-section {
-  padding: 20px;
+  padding: 5px;
   border-color: #CCC;
   border-radius: 2px;
   border-color: #CCC;
@@ -626,25 +647,25 @@ body.appearance_page_menu-manager-ultra .rc-tooltip-content .mmu-menu-item-toolt
 }
 @media screen and (max-width: 900px) {
   .mmu-menu-item-editor-section {
-    margin-bottom: 10px;
+    margin-bottom: 2.5px;
   }
 }
 .mmu-menu-item-editor-section-header {
-  margin-bottom: 20px;
+  margin-bottom: 5px;
 }
 .mmu-menu-item-editor-section-header--without-description {
-  margin-bottom: 30px;
+  margin-bottom: 7.5px;
 }
 .mmu-menu-item-editor-section-heading {
   margin-top: 0;
-  margin-bottom: 5px;
+  margin-bottom: 1.25px;
 }
 .mmu-menu-item-editor-actions a {
   cursor: pointer;
 }
 .mmu-menu-item-editor-actions--secondary {
-  margin-top: 10px;
-  margin-bottom: 10px;
+  margin-top: 2.5px;
+  margin-bottom: 2.5px;
 }
 
 .mmu-menu-item-editor-mode--content {
@@ -669,7 +690,7 @@ body.appearance_page_menu-manager-ultra .rc-tooltip-content .mmu-menu-item-toolt
   padding: 10px;
 }
 .mmu-menu-item-post-search-type-container {
-  margin-bottom: 10px;
+  margin-bottom: 2.5px;
 }
 .mmu-menu-item-post-search-keyword-container {
   display: grid;
@@ -688,7 +709,7 @@ body.appearance_page_menu-manager-ultra .rc-tooltip-content .mmu-menu-item-toolt
   overflow-y: auto;
 }
 .mmu-menu-item-post-search .mmu-post-results-field-value--url {
-  margin-top: 5px;
+  margin-top: 1.25px;
   font-size: 0.7rem;
 }
 .mmu-menu-item-post-search table {
@@ -697,11 +718,11 @@ body.appearance_page_menu-manager-ultra .rc-tooltip-content .mmu-menu-item-toolt
   width: 100%;
 }
 .mmu-menu-item-post-search table th {
-  background-color: #2271b1;
+  background-color: #ccc;
   color: white;
 }
 .mmu-menu-item-post-search table th, .mmu-menu-item-post-search table td {
-  padding: 10px;
+  padding: 2.5px;
   border: 1px solid #eee;
   word-break: break-all;
 }
@@ -718,8 +739,8 @@ body.appearance_page_menu-manager-ultra .rc-tooltip-content .mmu-menu-item-toolt
   word-break: keep-all;
 }
 .mmu-menu-item-post-search .mmu-menu-item-editor-help-text {
-  margin-top: 5px;
-  margin-bottom: 5px;
+  margin-top: 1.25px;
+  margin-bottom: 1.25px;
 }
 
 .mmu-pager {
@@ -737,14 +758,14 @@ body.appearance_page_menu-manager-ultra .rc-tooltip-content .mmu-menu-item-toolt
 .mmu-pager li a {
   cursor: pointer;
   display: block;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  padding-left: 10px;
-  padding-right: 10px;
-  border: 1px solid #2271b1;
+  padding-top: 1.25px;
+  padding-bottom: 1.25px;
+  padding-left: 2.5px;
+  padding-right: 2.5px;
+  border: 1px solid #ccc;
 }
 .mmu-pager li.selected, .mmu-pager li.selected a {
-  background-color: #2271b1;
+  background-color: #ccc;
   color: white;
 }
 .mmu-pager a:hover {
@@ -755,17 +776,17 @@ body.appearance_page_menu-manager-ultra .rc-tooltip-content .mmu-menu-item-toolt
 }
 
 .mmu-settings-section {
-  margin-bottom: 20px;
+  margin-bottom: 5px;
 }
 .mmu-settings-section-heading {
   font-weight: bold;
-  margin-bottom: 5px;
+  margin-bottom: 1.25px;
 }
 .mmu-settings-section-description {
-  margin-bottom: 10px;
+  margin-bottom: 2.5px;
 }
 .mmu-settings-form {
-  margin-bottom: 5px;
+  margin-bottom: 1.25px;
 }
 .mmu-settings-form-checkbox-group {
   -moz-columns: 2 auto;
@@ -775,7 +796,7 @@ body.appearance_page_menu-manager-ultra .rc-tooltip-content .mmu-menu-item-toolt
 #modal_menu_item_delete_confirm .notice-pro-upgrade {
   margin-left: 0;
   margin-right: 0;
-  margin-top: 40px;
+  margin-top: 10px;
 }
 
 /*# sourceMappingURL=main.css.map*/

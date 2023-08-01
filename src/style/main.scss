@@ -2,10 +2,13 @@ $color-text-disabled: #CCC;
 $color-icon-disabled: #CCC;
 
 $drag_target_height_active: 60px;
-$menu_item_vertical_spacing: 30px;
-$interface-action-color-default: #2271b1;
+$menu_item_vertical_spacing: 10px;
+$interface-action-color-default: #ccc;
+$interface-action-color-active: #2271b1;
+$interface-action-color-hover: #2271b1;
 $interface-action-color-inactive: #59a3df;
-$interface-container-padding-default: 20px;
+$interface-item-url-color: #aaa;
+$interface-container-padding-default: 5px;
 $interface-container-color-border: #CCC;
 $interface-container-border-radius: 2px;
 $interface-container-border-color: #CCC;
@@ -30,13 +33,13 @@ $interface-container-bgcolor-default: #fff;
 }
 
 @mixin button() {
-  padding: 15px;
+  padding: 10px 15px;
   display: block;
   border: 0;
   min-width: 100px;
   font-size: 1rem;
-  background-color: $interface-action-color-default;
-  border: 1px solid $interface-action-color-default;
+  background-color: $interface-action-color-active;
+  border: 1px solid $interface-action-color-active;
   color: white;
   cursor: pointer;
 }
@@ -52,7 +55,7 @@ $interface-container-bgcolor-default: #fff;
   align-items: center;
   justify-items: start;
   border: 0;
-  color: #2271b1;
+  color: $interface-action-color-default;
   background-color: transparent;
 
 }
@@ -131,30 +134,42 @@ body.appearance_page_menu-manager-ultra {
       display: inline-block;
       border-radius: 0;
       border-width: 0;
-      background-color: $interface-action-color-inactive;
-      padding-left: $interface-container-padding-default;
-      padding-right: $interface-container-padding-default;
+      background-color: $interface-action-color-default;
+      padding-left: ($interface-container-padding-default*3);
+      padding-right: ($interface-container-padding-default*3);
       padding-top: 10px;
       padding-bottom: 10px;
       margin-right: 5px;
+      text-align: center;
 
       color: #fff;
       bottom: -7px;
 
       &--selected {
         padding-top: 15px;
-        background-color: #fff;
-        color: inherit;  
+        background-color: $interface-action-color-active;
+        color: white;  
         border-width: 0px;
       }
     }
 
     .react-tabs__tab-list {
-      background-color: $interface-action-color-default;
-      padding-left: calc($interface-container-padding-default / 2);
+      background-color: #e8e8e8;
+      padding-left: calc($interface-container-padding-default / 2 * 3);
       padding-right: calc($interface-container-padding-default / 2);
       padding-bottom: 0;
-      padding-top: 5px;
+      padding-top: calc($interface-container-padding-default / 2);
+      position: relative;
+      &:after {
+        content: '';
+        position: absolute;
+        height: 4px;
+        background: $interface-action-color-active;
+        z-index: 1000;
+        bottom: -3px;
+        left: 0;
+        right: 0;
+      }
     }
 
   }
@@ -226,9 +241,13 @@ body.appearance_page_menu-manager-ultra {
   &-menu-item-container {
     
     background-color: #fff;
-    box-shadow: 0 3px 6px rgba(0,0,0,0.05), 0 3px 6px rgba(0,0,0,0.10);
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1);
     padding-right: $interface-container-padding-default;
     
+    &:hover {
+      outline: 1px solid $interface-action-color-hover;
+    }
+
     &--hidden {
       display: none;
     }
@@ -246,7 +265,7 @@ body.appearance_page_menu-manager-ultra {
     .mmu-icon-button--expand-item, 
     .mmu-icon-button--item-loading {
       margin-right: 10px;
-      font-size: 2.5rem;
+      font-size: 1.5rem;
     }
 
     .mmu-icon-button--item-loading {
@@ -331,7 +350,6 @@ body.appearance_page_menu-manager-ultra {
   &-menu-item-title {
     font-size: 1rem;
     line-height: 1.2;
-    font-weight: bold;
 
     &--delete {
       text-decoration: line-through;
@@ -349,6 +367,9 @@ body.appearance_page_menu-manager-ultra {
     &-rows {
       padding-left: 10px;
       width: 100%;
+      &.no-children {
+        padding-left: 40px;
+      }
     }
 
     &-meta {
@@ -357,10 +378,11 @@ body.appearance_page_menu-manager-ultra {
 
     &-url {
       display: inline-block;
+      color: $interface-item-url-color;
     }
 
     &-drag-handle {
-      margin-left: 5px;
+      margin-left: 9px;
       display: flex;
       justify-content: center;
 
@@ -374,7 +396,7 @@ body.appearance_page_menu-manager-ultra {
     // "></rect><rect x="3" y="8" width="4" height="2" stroke="transparent" fill="#666" stroke-width="0
     // "></rect><rect x="8" y="8" width="2" height="2" stroke="transparent" fill="#666" stroke-width="0
     // "></rect></svg>
-        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='3' height='3'%3E%3Crect x='0' y='0' width='2' height='2' fill='%23666'%3E%3C/rect%3E%3Crect x='2' y='0' width='1' height='2' fill='transparent'%3E%3C/rect%3E%3Crect x='0' y='2' width='3' height='1' fill='transparent'%3E%3C/rect%3E%3C/svg%3E");
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='3' height='3'%3E%3Crect x='0' y='0' width='2' height='2' fill='%23ccc'%3E%3C/rect%3E%3Crect x='2' y='0' width='1' height='2' fill='transparent'%3E%3C/rect%3E%3Crect x='0' y='2' width='3' height='1' fill='transparent'%3E%3C/rect%3E%3C/svg%3E");
         background-position: top left;
         width: 11px;
         height: 30px;
@@ -395,6 +417,9 @@ body.appearance_page_menu-manager-ultra {
     .mmu-button {
       @include button-icon-borderless();
 
+      &:hover {
+        color: $interface-action-color-hover;
+      }
       &--disabled {
         color: $color-text-disabled;
         cursor: default;
